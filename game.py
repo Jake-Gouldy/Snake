@@ -27,13 +27,13 @@ while game_running:
             game_running = False
             
     keys = pygame.key.get_pressed()
-    if keys[pygame.K_UP] or keys[pygame.K_w] and snake_direction != (0,20):
+    if (keys[pygame.K_UP] or keys[pygame.K_w]) and snake_direction != (0,20):
         snake_direction = (0,-20)
-    if keys[pygame.K_DOWN] or keys[pygame.K_s] and snake_direction != (0,-20):
+    if (keys[pygame.K_DOWN] or keys[pygame.K_s]) and snake_direction != (0,-20):
         snake_direction = (0,20)
-    if keys[pygame.K_LEFT] or keys[pygame.K_a] and snake_direction != (20,0):
+    if (keys[pygame.K_LEFT] or keys[pygame.K_a]) and snake_direction != (20,0):
         snake_direction = (-20,0)
-    if keys[pygame.K_RIGHT] or keys[pygame.K_d] and snake_direction != (-20,0):
+    if (keys[pygame.K_RIGHT] or keys[pygame.K_d]) and snake_direction != (-20,0):
         snake_direction = (20,0)
     
     if snake_direction != (0,0):
@@ -61,5 +61,6 @@ while game_running:
     screen.blit(score_text, (10,10))
     pygame.display.flip()
     clock.tick(15)
+
 
 pygame.quit
